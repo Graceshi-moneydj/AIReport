@@ -5,7 +5,7 @@ from datetime import date
 def Usageinfo():
     print('mergefile.py -f <sourcefolder> -o <outputfile> -b <backupfolder>')
     print('Options:')
-    print('    -i:Input source folder    ex: -i ".\\folder\\"')
+    print('    -f:Input source folder    ex: -f ".\\folder\\"')
     print('    -o:Output csv file       ex: -o ".\\all_report.txt"')
     print('Example:')
     print('    py mergefile.py -f "\\\\s-vcfs02\\AIReport\\" -o "\\\\s-vcfs02\\AIReport\\tmp\\all_report.txt" -b "\\\\s-vcfs02\\AIReport\\backup\\"')
