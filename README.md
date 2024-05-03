@@ -34,28 +34,29 @@ mergefile.py -f\\s-vcfs02\dbdata\AI_report\ -o\\s-vcfs02\dbdata\AI_report\temp\a
 
 ## DB相關
 * Table: JDTWS..AI_report  
-* spj 
-  JDTWS..spj_add_AI_report --更新s-db35
-  JDTWS..spj_sync_AI_report --更新XQDBs(no s-db35)
-  JDTWS..spj_JS000032 --給前端
+* spj:  
+  JDTWS..spj_add_AI_report(用於更新s-db35)  
+  JDTWS..spj_sync_AI_report(用於更新XQDBs no s-db35)  
+  JDTWS..spj_JS000032(給前端)
 
 ## Expire相關
-exec JDAQ..[spj_JQExpireTime] 'TWAI','Y','N'
+``` sql
+exec JDAQ..[spj_JQExpireTime] 'TWAI','Y','N'  
 exec JDAQ..[spj_JQExpireTimeXS] 'TWAI','Y','N'
+```
 
 ## 監控
-資料監控: Monitordata results - Dataitem: 台股AI Report
+資料監控: Monitordata results - Dataitem: 台股AI Report  
 Log監控: [s-daily3] C:\Mon\CheckTLogs.bat
 
 ## 維運相關
 ### 檔案跑失敗處理
-1.從 "\\s-vcfs02\dbdata\AI_report\backup\日期\" 底下
-   把失敗的檔案放到 \\s-vcfs02\dbdata\AI_report\
+1.從 "\\s-vcfs02\dbdata\AI_report\backup\日期\" 底下, 把失敗的檔案放到 \\s-vcfs02\dbdata\AI_report\
 2.執行\\s-daily8\AIReport\run.bat即可
 
-### sqlscript
-script:\\j-nas01\db_admins\dev\20240419_AIReport\script.sql
+### sql script
+\\j-nas01\db_admins\dev\20240419_AIReport\script.sql
 
 ### 文件
-https://docs.google.com/document/d/1BZ0G9Zj7Hm_mmDzvN8HdHmXPrrU1weZN/edit
+https://docs.google.com/document/d/1BZ0G9Zj7Hm_mmDzvN8HdHmXPrrU1weZN/edit  
 https://docs.google.com/spreadsheets/d/1Zese6hAIcewqn22Gule3vaPmqn68M6VN46kDnIuyYbA/edit#gid=2072330034
